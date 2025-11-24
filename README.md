@@ -1,48 +1,27 @@
 # Task2-sma5-indicator-movement
 This code creates a DataFrame with dates and closing prices, then manually calculates the 5-day Simple Moving Average (SMA) without using built-in functions. For each row, it sums the previous 5 close values and divides by 5. The result is added as a new SMA_5 column.
 
-***1️⃣ Create a DataFrame***
+### 1. Steps 
 
-We first create a DataFrame with:
-Date Column
-Close Price Column
+1. Create a DataFrame with Date and Close price.
+2. Loop through each row in the DataFrame.
+3. If less than 5 values are available → put None in SMA.
+4. If 5 or more values available:
+    ->Take the last 5 close prices
+    ->Add them
+    ->Divide by 5 → this is SMA-5
+5.Store the SMA value in a list.
+6.Add that list to a new column: SMA_5
+7.Print/output the final table.
 
-data = {
-    'Date' : pd.date_range("2018-01-01", periods=15),
-    'close':[100,102,104,106,108,200,201,202,203,204,205,207,208,300,302],
-}
-df = pd.DataFrame(data)
+### 📘 Simple Moving Average (SMA-5)
+This script calculates a 5-day simple moving average **without using any built-in functions**.
 
-**2️⃣ Create an empty list to store SMA values**
-sma_value = []
+### 🔹 How it works?
+- Loop through each row
+- If 5 values are not available → SMA = None
+- If 5 values available → take last 5 close prices
+- Add them and divide by 5
+- Store the result in a new column `SMA_5`
 
-**3️⃣ Loop through each row using i**
-If less than 5 values are available (i < 4), SMA cannot be calculated → store None.
-
-When 5 values are available, calculate SMA manually.
-
-for i in range(len(df)):
-    if i < 4:
-        sma_value.append(None)
-    else:
-        Total = 0
-        # Calculate sum of last 5 values
-        for j in range(i-4, i+1):
-            Total += df.loc[j, 'close']
-        sma_value.append(Total / 5)
-
-**4️⃣ Add the SMA list to the DataFrame**
-   df['SMA_5'] = sma_value
-
-**5️⃣ Print the output**
-print(df[['Date','close','SMA_5']])
-
-📌 Example Output
-         Date  close  SMA_5
-0  2018-01-01    100   NaN
-1  2018-01-02    102   NaN
-2  2018-01-03    104   NaN
-3  2018-01-04    106   NaN
-4  2018-01-05    108   104.0
-5  2018-01-06    200   124.0
-...
+This shows how SMA can be calculated manually using basic Python logic and loops.
