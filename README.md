@@ -21,7 +21,7 @@ This code creates a DataFrame with dates and closing prices, then manually calcu
 **6. (Optional cleanup)** — convert None to NaN, round results, or use pd.Series(sma_value).astype(float) if needed.
 
 # Working steps 
-'''
+```
 Given close = [100,102,104,106,108,200,201,202,203,204,205,207,208,300,302]
 
 Indices: 0..14.
@@ -92,4 +92,4 @@ index	close	SMA_5
 2	104	None
 3	106	None
 4	108	104.0
-'''
+```
