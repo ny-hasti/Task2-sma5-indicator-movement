@@ -1,10 +1,10 @@
 # Task2-sma5-indicator-movement
-### 📘 Simple Moving Average (SMA-5)
+# 📘 Simple Moving Average (SMA-5)
 This script calculates a 5-day simple moving average **without using any built-in functions**
 
 This code creates a DataFrame with dates and closing prices, then manually calculates the 5-day Simple Moving Average (SMA) without using built-in functions. For each row, it sums the previous 5 close values and divides by 5. The result is added as a new SMA_5 column.
 
-### 🔹 Steps 
+# 🔹 Steps 
 
 1. Create a DataFrame with Date and Close price.
 2. Loop through each row in the DataFrame.
@@ -19,7 +19,7 @@ This code creates a DataFrame with dates and closing prices, then manually calcu
 
 .
 
-### 🔹 How it works?
+# 🔹 How it works?
 - Loop through each row
 - If 5 values are not available → SMA = None
 - If 5 values available → take last 5 close prices
